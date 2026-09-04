@@ -376,4 +376,189 @@ With the password we got from level 5 - 6:
 ```text
 pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
 ```
+I got into the user directory and input `ls -la` to get the contents of the `bandit6` host"
+```bash
+bandit6@bandit:~$ ls -la
+total 20
+drwxr-xr-x   2 root root 4096 Jun 24 14:58 .
+drwxr-xr-x 150 root root 4096 Jun 24 15:02 ..
+-rw-r--r--   1 root root  220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 root root 3851 Jun 24 14:50 .bashrc
+-rw-r--r--   1 root root  807 Feb 13  2026 .profile
+```
+There wasn't any clues so I typed in `ls /` to go back to root directory and used the `find` command to searched for one of the goal specifications which was a file sized 33 bytes.
+```bash
+find / -type f -size -33c
+```
+I got a huge output of files and looked through them and found `/var/lib/dpkg/info/bandit7.password`
+I then input `cat /var/lib/dpkg/info/bandit7.password` and got the level 7 - 8 password.
 
+Password for level 7 - 8:
+```text
+Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
+```
+
+# LEVEL 7 - 8
+### Level Goal
+The password for the next level is stored in the file `data.txt` next to the word `millionth`.
+
+**Commands you may need to solve this level"**
+```bash
+man
+grep
+sort
+uniq
+strings
+base64
+tr
+tar
+gzip
+bzip2
+xxd
+```
+First tash is to `SSH` into the bandit7 host:
+```bash
+ssh -p 2220 bandit7@bandit.labs.overthewire.org
+```
+Uisng the password we got  from the previos level:
+```text
+Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
+```
+I got into the host and input `ls -la` getting the output:
+```bash
+bandit7@bandit:~$ ls -la
+total 4108
+drwxr-xr-x   2 root    root       4096 Jun 24 14:59 .
+drwxr-xr-x 150 root    root       4096 Jun 24 15:02 ..
+-rw-r--r--   1 root    root        220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 root    root       3851 Jun 24 14:50 .bashrc
+-rw-r--r--   1 root    root        807 Feb 13  2026 .profile
+-rw-r-----   1 bandit8 bandit7 4184396 Jun 24 14:59 data.txt
+```
+I then used the `grep` command to search for the word `millionth` in the `data.txt` file and the output was `millionth	VR1ljMayciFxbnUokuQmJFw6QC9VKtub`, giving us the password. Which was way easier than I anticipated.
+
+Password for level 8 - 9:
+```text
+VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+```
+
+# LEVEL 8 - 9
+### Level Goal
+The password for the next level is stored in the file data.txt and is the only line of text that occurs only once.
+
+**Commands you may need to solve this level:**
+```
+grep
+sort
+uniq
+strings
+base64
+tr
+tar
+gzip
+bzip2
+xxd
+```
+As usual, we `SSH` into the host on port 2220:
+```bash
+ssh -p 2220 bandit8@bandit.labs.overthewire.org
+```
+With the password from the previous level:
+```text
+VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+```
+Got into the host user `bandit8` and input `ls -la` seeing the `data.txt`. I then used the command `uniq data.txt` and got a hugeeee output and obviously I can't look through all of them to find the one that **occurs only once** as per the level goal.
+
+Used the `sort` command and got a sorted output that makes it easy to identify instances of the same text in a file. I found the password after looking through the output results but I'm sure there's an easier way cause what if there was millions of instances??
+
+So I used the command:
+```bash
+sort data.txt | uniq -c
+```
+With `-c` showing the count of the instances in the file. The output had the password having only 1 instance.
+
+Password for level 9 - 10:
+```text
+EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+```
+# LEVEL 9 - 10
+### Level Goal
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+**Commands you may need to solve this level:**
+```bash
+grep
+sort
+uniq
+strings
+base64
+tr
+tar
+gzip
+bzip2
+xxd
+```
+As usual again, `SSH` into `bandit9' host with"
+```bash
+ssh -p 2220 bandit9@bandit.labs.overthewire.org
+```
+With the password we got from the previous level:
+```text
+EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+```
+This was easy peasy hhh.
+I got into the host and `ls -la` getting the usual output with the target file being `data.txt`.
+
+I then used the command `strings` to print out the sequence of printable character in the file. THe password was supposed to be found alongside `=` characters. 
+```bash
+strings data.txt
+```
+
+Password for level 10 - 11:
+```text
+B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+```
+# LEVEL 10 - 11
+### Level Goals
+The password for the next level is stored in the file data.txt, which contains base64 encoded data.
+
+**Commands you may need to solve this level:**
+```bash
+grep
+sort,
+uniq,
+strings
+base64
+tr
+tar
+gzip
+bzip2
+xxd
+```
+Ofc, you know the usual:
+```bash
+ssh -p 2220 bandit10@bandit.labs.overthewire.org
+```
+With the password we got from the previos level
+```text
+B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+```
+Got in ``ls -la` and used the `base64` command to decode the password in the data.txt file.
+```bash
+base64 data.txt
+```
+To get the encoded text:
+```text
+VkdobElIQmhjM04zYjNKa0lHbHpJSEJaWms5Wk5raDNWWE5FYWpWeVREbFZkbmxvVlRkTlEyMTJP
+SFpPTlZKdkNnPT0K
+```
+We now decode it using:
+```bash
+bandit10@bandit:~$ base64 -d data.txt
+The password is pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+bandit10@bandit:~$ 
+```
+The decoded password for level 11 - 12 is therefore:
+```text
+pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+```
