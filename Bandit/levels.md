@@ -337,3 +337,14 @@ Using the password we got from the previous level:
 ```text
 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
 ```
+After logging into bandit5 host `inhere` directory, I type din `ls -la` to get details on the available directories and files.
+
+The level goal was to find the `bandit6` password in a human-readable file that is 1033 bytes and non-executable. IN the terminal I specified these features by typing in"
+```bash
+find . -type f -size 1033c
+```
+and the output was `./maybehere07/.file2/`. I then checked what type of file it was with the file command and the output was `./maybehere07/.file2: ASCII text, with very long lines (1000)` which tells us that the file is human-readable because it's ASCII text. I used the cat command to get the password.
+
+```text
+pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
+```
