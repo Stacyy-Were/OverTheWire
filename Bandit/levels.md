@@ -343,7 +343,7 @@ The level goal was to find the `bandit6` password in a human-readable file that 
 ```bash
 find . -type f -size 1033c
 ```
-and the output was `./maybehere07/.file2/`. I then checked what type of file it was with the file command and the output was `./maybehere07/.file2: ASCII text, with very long lines (1000)` which tells us that the file is human-readable because it's ASCII text. I used the cat command to get the password.
+and the output was `./maybehere07/.file2`. I then checked what type of file it was with the file command and the output was `./maybehere07/.file2: ASCII text, with very long lines (1000)` which tells us that the file is human-readable because it's ASCII text. I used the cat command to get the password.
 
 Level 6 - 7 password:
 
