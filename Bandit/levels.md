@@ -370,7 +370,7 @@ grep
 ```
 I first ssh to `bandit6` using:
 ```bash
-ssh -p 2220 bandit5@bandit.labs.overthewire.org
+ssh -p 2220 bandit6@bandit.labs.overthewire.org
 ```
 With the password we got from level 5 - 6:
 ```text
