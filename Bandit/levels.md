@@ -350,3 +350,30 @@ Level 6 - 7 password:
 ```text
 pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
 ```
+# LEVEL 6 - 7
+### Level Goal
+The password for the next level is stored somewhere on the server and has all of the following properties:
+
+    owned by user bandit7
+    owned by group bandit6
+    33 bytes in size
+
+**Commands you may need to solve this level:**
+```bash
+ls
+cd
+cat
+file
+du
+find
+grep
+```
+I first ssh to `bandit6` using:
+```bash
+ssh -p 2220 bandit5@bandit.labs.overthewire.org
+```
+With the password we got from level 5 - 6:
+```text
+pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
+```
+
