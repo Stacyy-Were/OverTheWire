@@ -562,3 +562,29 @@ The decoded password for level 11 - 12 is therefore:
 ```text
 pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
 ```
+
+# LEVEL 11 - 12
+### Level Goals
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions.
+
+**Commands you may need to solve this level:**
+```bash
+grep
+sort
+uniq
+strings
+base64
+tr
+tar
+gzip
+bzip2
+xxd
+```
+Again, `SSH` into bandit11 host:
+```bash
+ssh -p 2220 bandit11@@bandit.labs.overthewire.org
+```
+With the password from the previous level:
+```text
+pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+```
