@@ -12,5 +12,5 @@ I created a file `password.txt` and pasted the given encoded string. I then used
 stacy@stacy:~$ base64 -d flag.txt
 KRYPTONISGREAT
 ```
-With this password, I got access to `krypton1@krypton.labs.overthewire.org` with the given password" `KRYPTONISGREAT`
+With this password, I got access to `krypton1@krypton.labs.overthewire.org` with the given password" `KRYPTONISGREAT` using port 2231.
 
