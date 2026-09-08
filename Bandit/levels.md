@@ -543,7 +543,7 @@ With the password we got from the previos level
 ```text
 B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
 ```
-Got in ``ls -la` and used the `base64` command to decode the password in the data.txt file.
+Got in `ls -la` and used the `base64` command to decode the password in the data.txt file.
 ```bash
 base64 data.txt
 ```
@@ -582,7 +582,7 @@ xxd
 ```
 Again, `SSH` into bandit11 host:
 ```bash
-ssh -p 2220 bandit11@@bandit.labs.overthewire.org
+ssh -p 2220 bandit11@bandit.labs.overthewire.org
 ```
 With the password from the previous level:
 ```text
