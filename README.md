@@ -9,9 +9,9 @@ The goal is to build practical cybersecurity and Linux skills through hands-on p
 | Wargame       | Focus                 | Status         |
 | ------------- | --------------------- | -------------- |
 | **Bandit**    | Linux & Command Line  | 🟡 In Progress |
-| **Natas**     | Web Security          | ⚪ Not Started  |
+| **Natas**     | Web Security          | 🟡 In Progress  |
 | **Leviathan** | Reverse Engineering   | ⚪ Not Started  |
-| **Krypton**   | Cryptography          | ⚪ Not Started  |
+| **Krypton**   | Cryptography          | 🟡 In Progress  |
 | **Narnia**    | Binary Exploitation   | ⚪ Not Started  |
 | **Behemoth**  | Binary Exploitation   | ⚪ Not Started  |
 | **Utumno**    | Binary Exploitation   | ⚪ Not Started  |
